@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="dao.BoardDAO,bean.BoardVO"%>
+<%@page import="com.mycom.myapp.food.FoodDAO,com.mycom.myapp.food.FoodVO"%>
 <%
 	String sid = request.getParameter("id");
 	if (sid != ""){  
 		int id = Integer.parseInt(sid);
-		BoardVO u = new BoardVO();
+		FoodVO u = new FoodVO();
 		u.setSeq(id);
-		BoardDAO boardDAO = new BoardDAO();
-		boardDAO.deleteBoard('u');
+		FoodDAO foodDAO = new FoodDAO();
+		foodDAO.deleteFood('u');
 	}
-	response.sendRedirect("posts.jsp");
+	response.sendRedirect("list");
 %>
